@@ -1,0 +1,243 @@
+:root {
+  --bgcolor: #673de6;
+  --font-dark-color: #2f1c6a;
+  --border-color: #aaa;
+  --h1font: 32px;
+  --big-text: 42px;
+  --medium-text: 20px;
+  --normal-text: 16px;
+  --small-text: 14px;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tamaño de letras */
+
+.big-text {
+  font-size: var(--big-text);
+}
+
+.medium-text {
+  font-size: var(--medium-text);
+}
+
+.normal-text {
+  font-size: var(--normal-text);
+}
+
+.small-text {
+  font-size: var(--small-text);
+}
+
+/* Contenedor */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 550px;
+  height: 550px;
+  margin: 16px auto;
+  border: thin solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all ease-in-out 300ms;
+}
+
+/* Parte superior de la card */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: var(--bgcolor);
+  color: white;
+}
+
+.header-container h1 {
+  font-size: var(--h1font);
+}
+
+/* Principal de la card */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.trafico {
+  display: none;
+}
+
+/* Seccion de precio y boton */
+.price {
+  width: 100%;
+  height: 215px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.price-text {
+  margin-bottom: 32px;
+  color: var(--font-dark-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Estilos al boton */
+.button {
+  width: 100%;
+  height: 50px;
+  background-color: var(--bgcolor);
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all ease-in-out 300ms;
+}
+
+button:hover {
+  background-color: var(--font-dark-color);
+}
+
+.button p {
+  font-size: var(--medium-text);
+  color: white;
+}
+
+.caracteristicas {
+  width: 100%;
+  height: 215px;
+  color: var(--font-dark-color);
+}
+
+.caracteristicas-container {
+  padding-inline: 16px;
+}
+
+.caracteristicas-container:first-child {
+  text-align: center;
+}
+
+.list {
+  margin-top: 32px;
+  text-align: left;
+  line-height: 2.5;
+  list-style: none;
+}
+
+/* Estilos al footer */
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: auto;
+  border-top: thin solid var(--border-color);
+}
+
+.card-footer p {
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--bgcolor);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+.card-footer p:hover {
+  color: var(--font-dark-color);
+}
+
+@media (min-width: 720px) {
+  /* Contenedor */
+  .card-container {
+    width: 720px;
+    max-width: none;
+    height: 400px;
+  }
+
+  /* Principal de la card */
+  .main {
+    flex-direction: row;
+    height: 270px;
+  }
+
+  .price-container {
+    align-items: center;
+    margin: 4rem auto;
+    width: 100%;
+    border-right: thin solid var(--bgcolor);
+  }
+
+  .button {
+    width: 60%;
+  }
+
+  .caracteristicas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .caracteristicas-container {
+    width: auto;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .list {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Contenedor */
+  .card-container {
+    width: 950px;
+  }
+
+  .trafico {
+    width: calc(950px / 3);
+    display: flex;
+    align-items: center;
+  }
+
+  .trafico-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 147.6px;
+    padding-left: 32px;
+    border-right: thin solid var(--bgcolor);
+  }
+
+  .trafico-ul li {
+    color: var(--font-dark-color);
+    list-style: none;
+    line-height: 2.5;
+  }
+
+  .price {
+    width: calc(950px / 3);
+  }
+
+  .caracteristicas {
+    width: calc(950px / 3);
+  }
+}
