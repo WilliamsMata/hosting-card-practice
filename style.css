@@ -105,6 +105,7 @@ html {
   height: 50px;
   background-color: var(--bgcolor);
   cursor: pointer;
+  border: none;
   border-radius: 25px;
   transition: all ease-in-out 300ms;
 }
